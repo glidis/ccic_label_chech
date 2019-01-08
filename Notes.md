@@ -24,3 +24,12 @@ ob中找到报价单号，进而找到保单号关联
 报价单中的policyno：Tabccarinsurance.policyno
 和objective 关联  a.customer_guid=b.customer_guid
 姚老师代码中的可用，注意多对多的情况产生笛卡尔积
+
+## 2019-01-08
+
+spark-shell中udf函数注意事项：  
+  - null值需要有对应的处理方式。例如
+  def foo(bar: String): String = {
+  var values = ""
+  values = bar.replace("\\s", "")
+  return(values)}
